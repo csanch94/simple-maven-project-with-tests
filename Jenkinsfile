@@ -10,7 +10,7 @@ pipeline {
 
     stage('Build & Test') {
       steps {
-        bat 'mvn -B -ntp -Dmaven.test.failure.ignore verify'
+        sh 'mvn -B -ntp -Dmaven.test.failure.ignore verify'
       }
     }
   }
