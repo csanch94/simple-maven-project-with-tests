@@ -8,6 +8,7 @@ pipeline {
   stages {
     stage('Build & Test') {
       steps {
+        sleep 1000
         sh 'mvn -B -ntp -Dmaven.test.failure.ignore verify'
       }
     }
