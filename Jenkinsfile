@@ -1,13 +1,11 @@
 pipeline {
   agent any
 
-  stages {
-    stage('Checkout') {
-      steps {
-        checkout scm
-      }
-    }
+  tools {
+    maven 'M3'   // must match the name in Manage Jenkins → Tools
+  }
 
+  stages {
     stage('Build & Test') {
       steps {
         sh 'mvn -B -ntp -Dmaven.test.failure.ignore verify'
